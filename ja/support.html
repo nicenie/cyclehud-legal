@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サポート · CycleHUD</title>
+<style>
+  :root{
+    --primary:#2F6B07;
+    --lime:#A6FF2E;
+    --lime-ink:#10200A;
+    --ink:#1B2530;
+    --ink-2:#4B5B6B;
+    --ink-3:#5F6D7C;
+    --line:#D3DBE4;
+    --sunken:#EFF2F6;
+    --surface:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.4;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  p{margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#E7ECF2;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  .tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:6px;vertical-align:1px}
+  details{border-top:1px solid var(--line);padding:14px 0}
+  details:first-of-type{border-top:none;padding-top:0}
+  summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";float:right;color:var(--ink-3);font-weight:400}
+  details[open] summary::after{content:"－"}
+  .answer{padding-top:10px;font-size:15px;color:var(--ink-2)}
+  a{color:var(--primary);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+  .btn{display:inline-block;background:var(--lime);color:var(--lime-ink);text-decoration:none;
+    font-size:15px;font-weight:700;border-radius:999px;padding:12px 26px;margin-top:4px}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/support.html">简体</a>
+    <a href="../zh-Hant/support.html">繁體</a>
+    <a href="../en/support.html">English</a>
+    <a class="on" href="support.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">CycleHUD · サポート</span>
+    <h1>CycleHUD の使い方</h1>
+    <p class="meta">現在のバージョン 1.0（1）· macOS 15 以降 / iOS 18 以降</p>
+    <p class="lead">手順は 3 つ。ライドデータと動画を読み込み → 時刻を合わせる → ダッシュボードを設定して書き出す。前の手順が整ってはじめて次の手順が有効になります。</p>
+    <a class="btn" href="mailto:rankor@sina.com">メールで問い合わせる</a>
+  </div>
+
+  <div class="card">
+    <h2>よくある質問</h2>
+
+    <details open>
+      <summary>どのアクティビティファイルに対応していますか</summary>
+      <div class="answer">FIT 標準に沿った <code>.fit</code> ファイルであれば利用できます。Garmin、Wahoo、Bryton、Hammerhead などのサイクルコンピューターの書き出しに対応しています。解析には Garmin FIT SDK を使用します。メーカー独自のプライベート項目は無視されますが、標準項目（時刻・速度・心拍・標高・ケイデンスなど）には影響しません。</div>
+    </details>
+
+    <details>
+      <summary>動画はどこから読み込みますか</summary>
+      <div class="answer">macOS ではシステムのファイル選択パネルで選びます。iPhone と iPad ではシステムの写真選択ツールで 1 本選ぶか、「ファイル」アプリ内の動画を選べます。写真選択ツールは選んだ 1 本だけをアプリに渡し、ライブラリ全体を読むことはありません。</div>
+    </details>
+
+    <details>
+      <summary>「時刻を合わせる」は何をしているのですか</summary>
+      <div class="answer">録画を開始した瞬間と、ライドデータの 1 秒目は通常一致しません。この手順で両者を揃えると、ダッシュボードの数値が映像の動きに追従します。時刻合わせが終わるまで書き出しに進めないのは意図的な仕様です。ずれたままの映像は「データが偽物に見える」ため、書き出しが失敗するより問題に気づきにくいからです。</div>
+    </details>
+
+    <details>
+      <summary>書き出した映像はどこにありますか</summary>
+      <div class="answer">macOS では保存パネルで選んだフォルダ。iOS ではまずアプリ内の Exports フォルダに書き出し、完了後に共有シートで行き先を選びます（「ファイルに保存」・写真・AirDrop）。見つからない場合は「ファイル」アプリでファイル名から検索してください。</div>
+    </details>
+
+    <details>
+      <summary>書き出した映像が HEVC で、古いプレーヤーで開けないのはなぜですか</summary>
+      <div class="answer">元の動画に HDR 情報（HLG または PQ）がある場合、10-bit と広色域を保つために HEVC で書き出します。H.264 ではその素材が SDR に潰され、画面がグレーがかり、しかも元に戻せません。代わりに、一部の古いプレーヤーや古い Windows 端末では HEVC を再生できません。再生環境が対応していない場合は、通常の SDR 動画を素材にして書き出すか、HEVC 対応の端末で再生してください。</div>
+    </details>
+
+    <details>
+      <summary>単位をマイルに切り替えられますか</summary>
+      <div class="answer">はい。設定カードの「単位」に 3 つの選択肢があります（システムに従う・メートル法・ヤードポンド法）。切り替えるとダッシュボード、映像上の HUD、書き出した映像がそろって反映されます。「システムに従う」の場合、実際に適用されている単位が下に表示されるので、切り替えたつもりで切り替わっていない状態は起きません。</div>
+    </details>
+
+    <details>
+      <summary>データがアップロードされることはありますか</summary>
+      <div class="answer">ありません。本アプリは通信もアカウントもなく、FIT ファイルと動画はこのデバイス上でのみ処理されます。詳しくは<a href="privacy-policy.html">プライバシーポリシー</a>をご覧ください。</div>
+    </details>
+
+    <details>
+      <summary>書き出しが遅い、または失敗します</summary>
+      <div class="answer">4K 素材の合成はメモリとディスク書き込み速度の負荷が高くなります。書き出し先の空き容量を確認し、まず短いクリップで試して原因を切り分けてください。それでも失敗する場合は、デバイスのモデル、OS のバージョン、動画の仕様（解像度 / フレームレート / コーデック）と再現手順を下記アドレスまでお送りください。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>その他のお問い合わせ</h2>
+    <p><a href="mailto:rankor@sina.com">rankor@sina.com</a> まで、OS のバージョンとアプリのバージョンを添えてご連絡ください。再現できる手順が具体的なほど、回答が早くなります。</p>
+    <p class="meta">プライバシーの詳細は<a href="privacy-policy.html">プライバシーポリシー</a>に記載しています。</p>
+    <p class="meta">本バージョンにはサブスクリプションやアプリ内課金がないため、同意いただく購読条件はありません。</p>
+  </div>
+
+  <footer>CycleHUD · ライドデータを自分の映像に重ねる</footer>
+</div>
+</body>
+</html>

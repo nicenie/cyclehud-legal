@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー · CycleHUD</title>
+<style>
+  :root{
+    --primary:#2F6B07;
+    --lime:#A6FF2E;
+    --lime-ink:#10200A;
+    --ink:#1B2530;
+    --ink-2:#4B5B6B;
+    --ink-3:#5F6D7C;
+    --line:#D3DBE4;
+    --sunken:#EFF2F6;
+    --surface:#FFFFFF;
+    --danger:#B42318;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.4;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  h3{font-size:15px;margin:24px 0 8px;font-weight:700}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-left:22px}
+  li{margin-bottom:6px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#E7ECF2;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  .tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:6px;vertical-align:1px}
+  table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:14px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--ink-2);font-weight:500;white-space:nowrap}
+  .no{color:var(--primary);font-weight:700}
+  .yes{color:var(--danger);font-weight:700}
+  a{color:var(--primary);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/privacy-policy.html">简体</a>
+    <a href="../zh-Hant/privacy-policy.html">繁體</a>
+    <a href="../en/privacy-policy.html">English</a>
+    <a class="on" href="privacy-policy.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">CycleHUD · プライバシーポリシー</span>
+    <h1>CycleHUD のデータの扱い</h1>
+    <p class="meta">施行日：2026 年 11 月 16 日 · バージョン 1.0（1）以降に適用</p>
+    <p class="lead">CycleHUD はライドデータと動画を、ダッシュボード付きの 1 本の映像に仕上げるアプリです。処理はすべてお使いのデバイス上で完結します。アカウントなし、通信なし、解析 SDK なし。読み込んだ FIT ファイルと動画がデバイスの外に出ることはありません。</p>
+  </div>
+
+  <div class="card">
+    <h2>1. 収集する情報</h2>
+    <p>収集するものはありません。以下はアプリが扱うデータのすべてで、いずれも端末内にとどまります。</p>
+    <table>
+      <tr><th>データ</th><th>アプリでの扱い</th><th>送信</th><th>トラッキング利用</th></tr>
+      <tr>
+        <td>アクティビティファイル（<code>.fit</code>）</td>
+        <td>システムのファイル選択で指定された後にのみ読み込み、時刻・速度・心拍・標高などの項目を解析してダッシュボードを生成します</td>
+        <td class="no">なし</td>
+        <td class="no">なし</td>
+      </tr>
+      <tr>
+        <td>動画ファイル</td>
+        <td>指定された後にのみ読み込み、時刻合わせと合成に使用します。次回起動時に続きから編集できるよう、アプリのコンテナ内にコピーを 1 つ保持します</td>
+        <td class="no">なし</td>
+        <td class="no">なし</td>
+      </tr>
+      <tr>
+        <td>書き出した映像</td>
+        <td>macOS では保存パネルで選んだ場所へ、iOS ではまずアプリの書類フォルダ内 Exports へ書き出し、その後に共有シートで「ファイル」・写真・AirDrop の行き先を選べます</td>
+        <td class="no">なし</td>
+        <td class="no">なし</td>
+      </tr>
+      <tr>
+        <td>単位の設定と直近の作業</td>
+        <td>単位の設定は端末の環境設定に、直近の作業記録はアプリのコンテナに保存し、次回起動時の復元に使います</td>
+        <td class="no">なし</td>
+        <td class="no">なし</td>
+      </tr>
+    </table>
+
+    <h3>そのほかは収集しません</h3>
+    <ul>
+      <li>登録は不要で、電話番号・メールアドレス・アカウント情報を収集しません</li>
+      <li>広告 SDK、解析 SDK、クラッシュレポート SDK を組み込んでいません</li>
+      <li>位置情報・連絡先・マイク・カメラの権限を要求しません</li>
+      <li>アプリやウェブサイトをまたぐトラッキングを行いません。アプリに同梱しているプライバシーマニフェストでも「トラッキングなし・収集するデータ型なし」を宣言しており、本節と一致しています</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>2. ファイルの保存場所</h2>
+    <ul>
+      <li><strong>処理はすべて端末内。</strong>FIT の解析、映像の合成、ファイルの書き出しはすべてお使いのデバイス上で行われ、ファイルの中身が外部に送られる工程はありません。</li>
+      <li><strong>アプリのコンテナに残るのは 2 つ。</strong>読み込んだ動画のコピー（次回起動時に続きから編集するため）と、直近の作業記録です。どちらもこのデバイス上だけに存在します。</li>
+      <li><strong>再起動後もファイルを開くためのブックマーク。</strong>前回選んだファイルを次回も開けるよう、システムが発行するセキュリティスコープ付きブックマークを端末内に保存します。これはファイルを指す単なる参照情報にすぎず、中身を含まず、デバイスの外に出ません。</li>
+      <li><strong>アプリを削除すれば消えます。</strong>アプリを削除するとコンテナ内のコピー・記録・ブックマークも削除されます。書き出した映像はあなたが保存した場所にそのまま残ります。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>3. 通信について</h2>
+    <p>本アプリは一切の通信を行いません。したがって「アップロード」「クラウド同期」「オンラインテンプレート」といった動作は存在しません。macOS 版のサンドボックス設定にはネットワーククライアントの権限がなく、iOS 版にも通信を行うコード経路がありません。</p>
+    <p>将来のバージョンで通信を必要とする機能を追加する場合は、先に本ページ上部の施行日を更新し、アプリ内で追加内容と理由をお知らせします。</p>
+  </div>
+
+  <div class="card">
+    <h2>4. 権限とファイルアクセス</h2>
+    <table>
+      <tr><th>権限 / 入口</th><th>用途</th><th>許可しない場合</th></tr>
+      <tr>
+        <td>ユーザが選択したファイルの読み書き（macOS サンドボックス）</td>
+        <td>開く／保存パネルで選んだ FIT ファイル・動画・書き出し先だけにアクセスします</td>
+        <td>読み込みと書き出しができません。それ以外の画面は閲覧できます</td>
+      </tr>
+      <tr>
+        <td>システムの写真選択ツール（iOS）</td>
+        <td>選んだ 1 本の動画だけをアプリに渡します。ライブラリ全体は読み取れません</td>
+        <td>「ファイル」アプリから動画を読み込めば機能は変わりません</td>
+      </tr>
+    </table>
+    <p class="meta">位置情報・連絡先・マイク・カメラ・ヘルスケアデータの権限は要求しません。</p>
+  </div>
+
+  <div class="card">
+    <h2>5. お子様について</h2>
+    <p>CycleHUD は一般向けのユーティリティであり、13 歳未満の児童を対象としていません。データを収集せず通信もしないため、児童の個人情報が収集される経路自体がありません。</p>
+  </div>
+
+  <div class="card">
+    <h2>6. ポリシーの変更</h2>
+    <p>本ポリシーを変更する場合は、ページ上部の施行日を更新します。収集範囲や通信の扱いに関わる変更はアプリ内でお知らせします。</p>
+  </div>
+
+  <div class="card">
+    <h2>7. お問い合わせ</h2>
+    <p>本ポリシーに関するご質問・ご意見・ご要望は、メールでご連絡ください。</p>
+    <p><a href="mailto:rankor@sina.com">rankor@sina.com</a></p>
+    <p class="meta">15 営業日以内に返信します。</p>
+  </div>
+
+  <footer>CycleHUD · データはこのデバイスから出ません</footer>
+</div>
+</body>
+</html>

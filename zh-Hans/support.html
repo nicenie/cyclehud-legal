@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>支持 · CycleHUD</title>
+<style>
+  :root{
+    --primary:#2F6B07;
+    --lime:#A6FF2E;
+    --lime-ink:#10200A;
+    --ink:#1B2530;
+    --ink-2:#4B5B6B;
+    --ink-3:#5F6D7C;
+    --line:#D3DBE4;
+    --sunken:#EFF2F6;
+    --surface:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.3;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  p{margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#E7ECF2;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  .tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:6px;vertical-align:1px}
+  details{border-top:1px solid var(--line);padding:14px 0}
+  details:first-of-type{border-top:none;padding-top:0}
+  summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";float:right;color:var(--ink-3);font-weight:400}
+  details[open] summary::after{content:"－"}
+  .answer{padding-top:10px;font-size:15px;color:var(--ink-2)}
+  a{color:var(--primary);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+  .btn{display:inline-block;background:var(--lime);color:var(--lime-ink);text-decoration:none;
+    font-size:15px;font-weight:700;border-radius:999px;padding:12px 26px;margin-top:4px}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a class="on" href="support.html">简体</a>
+    <a href="../zh-Hant/support.html">繁體</a>
+    <a href="../en/support.html">English</a>
+    <a href="../ja/support.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">CycleHUD · 支持</span>
+    <h1>怎么用 CycleHUD</h1>
+    <p class="meta">当前版本 1.0（1）· macOS 15 或更高 / iOS 18 或更高</p>
+    <p class="lead">三步：导入运动数据与视频 → 校准时间 → 设置仪表盘并导出。前一步就绪后，下一步才会亮起。</p>
+    <a class="btn" href="mailto:rankor@sina.com">邮件联系我们</a>
+  </div>
+
+  <div class="card">
+    <h2>常见问题</h2>
+
+    <details open>
+      <summary>支持哪些运动数据文件？</summary>
+      <div class="answer">任何符合 FIT 标准的 <code>.fit</code> 文件，Garmin、Wahoo、Bryton、Hammerhead 等码表导出的都可以。解析使用 Garmin FIT SDK；个别厂商写在私有字段里的数据会被忽略，不影响标准字段（时间、速度、心率、海拔、踏频等）。</div>
+    </details>
+
+    <details>
+      <summary>视频从哪里导入？</summary>
+      <div class="answer">macOS 用系统的打开面板选文件；iPhone 与 iPad 可以用系统照片选择器挑一段，或用「文件」App 里的视频。照片选择器只把你选中的那一段交给 App，不会读你的整个图库。</div>
+    </details>
+
+    <details>
+      <summary>「校准时间」是做什么的？</summary>
+      <div class="answer">视频开始录制的那一刻，通常和运动数据的第一秒不是同一时刻。校准这一步把两者对齐，之后仪表盘上的数字才会跟着画面里的动作走。校准没完成时不会进入导出，这是有意为之——时间错位的成片看起来「数据是假的」，比导出失败更难发现问题。</div>
+    </details>
+
+    <details>
+      <summary>导出的成片在哪里？</summary>
+      <div class="answer">macOS：在你保存面板里选定的文件夹。iOS：先写进 App 自己的 Exports 文件夹，导出完成后由分享面板决定去向——「存储到文件」、相册或隔空投送都可以。找不到就在「文件」App 里按文件名搜索。</div>
+    </details>
+
+    <details>
+      <summary>为什么有些成片是 HEVC，老播放器打不开？</summary>
+      <div class="answer">当源视频带 HDR 标记（HLG 或 PQ）时，为保住 10-bit 与广色域，App 用 HEVC 导出；H.264 会把这类素材压成普通 SDR，画面发灰且不可逆。代价是部分旧播放器与老 Windows 设备不支持 HEVC。若你的播放环境吃不下，先用一段普通 SDR 视频作为素材导出，或换支持 HEVC 的设备播放。</div>
+    </details>
+
+    <details>
+      <summary>单位能切成英里吗？</summary>
+      <div class="answer">可以。设置卡里的「单位」有三档：跟随系统、公制、英制。切换后仪表盘、画面上的 HUD 与导出的成片同步生效；「跟随系统」下方会显示当前实际生效的单位，避免你以为切了其实没切。</div>
+    </details>
+
+    <details>
+      <summary>我的数据会被上传吗？</summary>
+      <div class="answer">不会。App 不联网、没有账号，FIT 文件与视频只在这台设备上处理。详见<a href="privacy-policy.html">隐私政策</a>。</div>
+    </details>
+
+    <details>
+      <summary>导出很慢或者失败了怎么办？</summary>
+      <div class="answer">4K 素材的合成对内存和磁盘写入速度要求较高。先确认导出目标所在磁盘有足够剩余空间，再试一段更短的视频定位问题。仍然失败，请把设备型号、系统版本、视频规格（分辨率 / 帧率 / 编码）和具体步骤发到下面的邮箱。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>还想问别的</h2>
+    <p>写信到 <a href="mailto:rankor@sina.com">rankor@sina.com</a>，附上系统版本与 App 版本。能复现的步骤越具体，答复越快。</p>
+    <p class="meta">隐私细节见<a href="privacy-policy.html">隐私政策</a>。</p>
+    <p class="meta">本 App 目前不含订阅或内购，因此没有需要同意的订阅条款。</p>
+  </div>
+
+  <footer>CycleHUD · 把运动数据叠在你的画面上</footer>
+</div>
+</body>
+</html>

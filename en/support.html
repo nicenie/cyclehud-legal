@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support · CycleHUD</title>
+<style>
+  :root{
+    --primary:#2F6B07;
+    --lime:#A6FF2E;
+    --lime-ink:#10200A;
+    --ink:#1B2530;
+    --ink-2:#4B5B6B;
+    --ink-3:#5F6D7C;
+    --line:#D3DBE4;
+    --sunken:#EFF2F6;
+    --surface:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.3;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  p{margin:0 0 12px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#E7ECF2;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  .tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:6px;vertical-align:1px}
+  details{border-top:1px solid var(--line);padding:14px 0}
+  details:first-of-type{border-top:none;padding-top:0}
+  summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";float:right;color:var(--ink-3);font-weight:400}
+  details[open] summary::after{content:"－"}
+  .answer{padding-top:10px;font-size:15px;color:var(--ink-2)}
+  a{color:var(--primary);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+  .btn{display:inline-block;background:var(--lime);color:var(--lime-ink);text-decoration:none;
+    font-size:15px;font-weight:700;border-radius:999px;padding:12px 26px;margin-top:4px}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/support.html">简体</a>
+    <a href="../zh-Hant/support.html">繁體</a>
+    <a class="on" href="support.html">English</a>
+    <a href="../ja/support.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">CycleHUD · Support</span>
+    <h1>How to use CycleHUD</h1>
+    <p class="meta">Current version 1.0 (1) · macOS 15 or later / iOS 18 or later</p>
+    <p class="lead">Three steps: import your activity file and video, calibrate time, then set up the dashboard and export. A step only lights up once the one before it is ready.</p>
+    <a class="btn" href="mailto:rankor@sina.com">Email us</a>
+  </div>
+
+  <div class="card">
+    <h2>Frequently asked</h2>
+
+    <details open>
+      <summary>Which activity files are supported?</summary>
+      <div class="answer">Any <code>.fit</code> file that follows the FIT standard — exports from Garmin, Wahoo, Bryton, Hammerhead and similar computers all work. Parsing uses the Garmin FIT SDK. Fields a vendor stores in private fields are ignored; the standard ones (time, speed, heart rate, altitude, cadence and so on) are not affected.</div>
+    </details>
+
+    <details>
+      <summary>Where do I import the video from?</summary>
+      <div class="answer">On macOS, pick a file in the system open panel. On iPhone and iPad you can pick a clip with the system photo picker, or use a video from the Files app. The photo picker hands over only the clip you select; it cannot read your whole library.</div>
+    </details>
+
+    <details>
+      <summary>What does calibrating time do?</summary>
+      <div class="answer">The moment recording starts is almost never the same instant as the first second of your activity data. Calibration lines the two up, so the numbers on the dashboard move with what you see in the frame. Export stays unavailable until calibration is done — deliberately. A misaligned clip looks like "the data is fake", which is harder to catch than an export that simply fails.</div>
+    </details>
+
+    <details>
+      <summary>Where does the exported clip go?</summary>
+      <div class="answer">macOS: the folder you chose in the save panel. iOS: it is written into the app's own Exports folder first, and once the export finishes the share sheet decides where it lands — Save to Files, Photos or AirDrop. If you cannot find it, search by filename in the Files app.</div>
+    </details>
+
+    <details>
+      <summary>Why are some exports HEVC, and why won't older players open them?</summary>
+      <div class="answer">When the source video carries HDR metadata (HLG or PQ), the app exports HEVC to keep 10-bit depth and wide gamut; H.264 would flatten that footage to plain SDR and the picture would go grey, irreversibly. The trade-off is that some older players and older Windows machines cannot play HEVC. If your playback setup cannot handle it, export with an ordinary SDR source video, or play the result on a device that supports HEVC.</div>
+    </details>
+
+    <details>
+      <summary>Can I switch units to miles?</summary>
+      <div class="answer">Yes. The Units control in the settings card has three options: follow system, metric, imperial. Switching applies to the dashboard, the on-video HUD and the exported clip together. Under "follow system" the app shows which unit is actually in effect, so you never have to guess.</div>
+    </details>
+
+    <details>
+      <summary>Is any of my data uploaded?</summary>
+      <div class="answer">No. The app has no network access and no account; your FIT file and video are processed on this device only. See the <a href="privacy-policy.html">Privacy Policy</a>.</div>
+    </details>
+
+    <details>
+      <summary>Export is slow or failed — what now?</summary>
+      <div class="answer">Compositing 4K footage is demanding on memory and disk write speed. Check that the export destination has enough free space, then try a shorter clip to isolate the problem. If it still fails, email the device model, OS version, video specs (resolution / frame rate / codec) and the exact steps to the address below.</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2>Anything else</h2>
+    <p>Email <a href="mailto:rankor@sina.com">rankor@sina.com</a> with your OS version and app version. Concrete reproduction steps get a faster answer.</p>
+    <p class="meta">Privacy details are in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <p class="meta">This version contains no subscription or in-app purchase, so there are no subscription terms to accept.</p>
+  </div>
+
+  <footer>CycleHUD · Put your ride data on your own footage</footer>
+</div>
+</body>
+</html>

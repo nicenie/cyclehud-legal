@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱私權政策 · CycleHUD</title>
+<style>
+  :root{
+    --primary:#2F6B07;
+    --lime:#A6FF2E;
+    --lime-ink:#10200A;
+    --ink:#1B2530;
+    --ink-2:#4B5B6B;
+    --ink-3:#5F6D7C;
+    --line:#D3DBE4;
+    --sunken:#EFF2F6;
+    --surface:#FFFFFF;
+    --danger:#B42318;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--sunken);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Hiragino Sans CNS","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;margin-bottom:20px}
+  h1{font-size:26px;line-height:1.3;margin:0 0 8px;font-weight:700}
+  h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  h3{font-size:15px;margin:24px 0 8px;font-weight:700}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-left:22px}
+  li{margin-bottom:6px}
+  .meta{font-size:13px;color:var(--ink-3);margin:0}
+  .lead{font-size:15px;color:var(--ink-2)}
+  .tag{display:inline-block;font-size:12px;color:var(--ink-2);background:#E7ECF2;border-radius:999px;padding:3px 12px;margin-bottom:16px}
+  .tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);margin-right:6px;vertical-align:1px}
+  table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:14px}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--ink-2);font-weight:500;white-space:nowrap}
+  .no{color:var(--primary);font-weight:700}
+  .yes{color:var(--danger);font-weight:700}
+  a{color:var(--primary);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:3px}
+  footer{font-size:13px;color:var(--ink-3);text-align:center;margin-top:32px}
+  .langs{display:flex;gap:14px;justify-content:flex-end;font-size:13px;margin:0 0 14px}
+  .langs a{color:var(--ink-3);text-decoration:none}
+  .langs a.on{color:var(--primary);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="langs">
+    <a href="../zh-Hans/privacy-policy.html">简体</a>
+    <a class="on" href="privacy-policy.html">繁體</a>
+    <a href="../en/privacy-policy.html">English</a>
+    <a href="../ja/privacy-policy.html">日本語</a>
+  </nav>
+
+  <div class="card">
+    <span class="tag">CycleHUD · 隱私權政策</span>
+    <h1>CycleHUD 如何處理你的資料</h1>
+    <p class="meta">生效日期：2026 年 11 月 16 日 · 適用於 1.0（1）及之後的版本</p>
+    <p class="lead">CycleHUD 把運動資料與影片合成為一段帶儀表板的成品。所有處理都在你的裝置上完成：沒有帳號、沒有網路請求、沒有統計 SDK，你匯入的 FIT 檔與影片不會離開這台裝置。</p>
+  </div>
+
+  <div class="card">
+    <h2>一、我們收集什麼</h2>
+    <p>沒有可收集的東西。下表是 App 會接觸到的全部資料，它們都只在本機流動：</p>
+    <table>
+      <tr><th>資料</th><th>App 如何處理</th><th>是否上傳</th><th>是否用於追蹤</th></tr>
+      <tr>
+        <td>運動資料檔（<code>.fit</code>）</td>
+        <td>只在你透過系統檔案選擇器指定後讀取，用於解析時間、速度、心率、海拔等欄位並產生儀表板</td>
+        <td class="no">否</td>
+        <td class="no">否</td>
+      </tr>
+      <tr>
+        <td>影片檔</td>
+        <td>只在你指定後讀取，用於時間校準與畫面合成；會在 App 容器內保留一份副本，讓你下次啟動能接著編輯</td>
+        <td class="no">否</td>
+        <td class="no">否</td>
+      </tr>
+      <tr>
+        <td>匯出的成品</td>
+        <td>macOS 寫入你在儲存面板選定的位置；iOS 先寫入 App 文件的 Exports 資料夾，再由你透過系統分享面板決定存到「檔案」、相簿或 AirDrop</td>
+        <td class="no">否</td>
+        <td class="no">否</td>
+      </tr>
+      <tr>
+        <td>單位偏好與最近任務</td>
+        <td>單位偏好存於本機偏好設定；最近任務紀錄存於 App 容器，供下次開啟時回復</td>
+        <td class="no">否</td>
+        <td class="no">否</td>
+      </tr>
+    </table>
+
+    <h3>除此之外，不收集</h3>
+    <ul>
+      <li>不要求註冊，不收集手機號碼、電子郵件或任何帳號資訊</li>
+      <li>不接入廣告 SDK、統計 SDK 或當機回報 SDK</li>
+      <li>不要求定位、通訊錄、麥克風、相機權限</li>
+      <li>不做跨 App 與網站的追蹤。App 隨附的隱私清單宣告「不追蹤、不收集資料類型」，與本節一致</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>二、你的檔案在哪裡</h2>
+    <ul>
+      <li><strong>處理全部在本機。</strong>解析 FIT、合成影片、寫入檔案都在你的裝置上完成，沒有任何環節把檔案內容送出去。</li>
+      <li><strong>App 容器內會保留兩樣東西：</strong>匯入影片的一份副本（讓下次啟動能接著編輯），以及最近任務紀錄。兩者都只在這台裝置上。</li>
+      <li><strong>跨啟動的檔案存取憑證。</strong>為了下次啟動還能開啟你上次選的檔案，App 會在本機保存系統簽發的安全範圍書籤（security-scoped bookmark）。它只是一個指向檔案的憑證，不含檔案內容，也不會離開裝置。</li>
+      <li><strong>卸載即清除。</strong>刪除 App 會一併刪掉容器內的副本、紀錄與書籤；你自己匯出的成品不受影響，它在你選擇的儲存位置。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>三、連線狀況</h2>
+    <p>本 App 不發起任何網路請求，因此不存在「上傳」「雲端同步」「線上模板」這類行為。macOS 版本的沙盒設定沒有網路用戶端權限，iOS 版本也沒有任何網路程式碼路徑。</p>
+    <p>若未來版本加入需要連線的功能，我們會先更新本頁頂部的生效日期，並在 App 內說明新增了什麼、為什麼需要。</p>
+  </div>
+
+  <div class="card">
+    <h2>四、系統權限與檔案存取</h2>
+    <table>
+      <tr><th>權限 / 入口</th><th>用途</th><th>拒絕或不用它時</th></tr>
+      <tr>
+        <td>使用者選擇檔案的讀寫（macOS 沙盒）</td>
+        <td>你在開啟／儲存面板選定的 FIT 檔、影片與匯出位置，App 才有權讀寫</td>
+        <td>無法匯入或匯出；App 其他頁面仍可瀏覽</td>
+      </tr>
+      <tr>
+        <td>系統照片選擇器（iOS）</td>
+        <td>只把你選中的那一段影片交給 App，App 讀不到你的整個圖庫</td>
+        <td>可改用「檔案」App 匯入影片，功能不受影響</td>
+      </tr>
+    </table>
+    <p class="meta">App 不要求定位、通訊錄、麥克風、相機、健康資料等權限。</p>
+  </div>
+
+  <div class="card">
+    <h2>五、兒童</h2>
+    <p>CycleHUD 面向一般使用者，並非針對 13 歲以下兒童設計。由於 App 不收集任何資料、不連線，也不存在兒童個人資訊被收集的路徑。</p>
+  </div>
+
+  <div class="card">
+    <h2>六、政策變更</h2>
+    <p>本政策變更時，我們會更新頁面頂部的生效日期；涉及收集範圍或連線行為的變更會在 App 內提示。</p>
+  </div>
+
+  <div class="card">
+    <h2>七、聯絡我們</h2>
+    <p>對隱私權政策有疑問、意見或請求，可透過電子郵件聯絡：</p>
+    <p><a href="mailto:rankor@sina.com">rankor@sina.com</a></p>
+    <p class="meta">我們會在收到請求後 15 個工作天內回覆。</p>
+  </div>
+
+  <footer>CycleHUD · 資料不離開這台裝置</footer>
+</div>
+</body>
+</html>
