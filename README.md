@@ -46,7 +46,13 @@ zh-Hans/  zh-Hant/  en/  ja/
 https://<账号>.github.io/cyclehud-legal/
 ```
 
-该地址就是 **App Store Connect 的「隐私政策 URL」**，也是 App 内设置卡「隐私政策」那一行要指向的地址。
+站点根地址形如上式，但**提交给 App Store Connect 与写进 App 的必须是英文正文页**：
+
+```
+https://<账号>.github.io/cyclehud-legal/en/privacy-policy.html
+```
+
+理由：主攻市场是美/英，审核主语言也是英文；审核员点开的第一屏应当是条文本身，而不是再点一次语言选择。其他语种由页面右上角的语言条互通。
 
 ## 拿到 URL 之后：反填进 App（别手改）
 
@@ -56,7 +62,7 @@ https://<账号>.github.io/cyclehud-legal/
 cd /Users/niebo/projs-swift/m2
 python3 scripts/set_support_info.py \
   --email rankor@sina.com \
-  --privacy-url https://<账号>.github.io/cyclehud-legal/zh-Hans/privacy-policy.html
+  --privacy-url https://<账号>.github.io/cyclehud-legal/en/privacy-policy.html
 ```
 
 脚本把两个值写进 `m2/Support/AppSupportInfo.swift`，然后调用 `scripts/check_release_config.py`；转绿即表示「值已填 + 形状合法 + 许可证全文齐备」。填完记得：
@@ -64,7 +70,9 @@ python3 scripts/set_support_info.py \
 - App Store Connect 的隐私政策 URL 填**同一个**地址（审核会比对，不一致会被要求说明）。
 - 真机点一次设置卡里的「隐私政策」与「支持邮箱」，确认外链能开、邮件能唤起——脚本验不了这一步。
 
-**隐私政策 URL 建议指向具体语言的正文页**（如 `zh-Hans/privacy-policy.html`），而不是 `index.html`：审核员点进去应当直接看到条文，而不是再点一次语言选择。
+**不要把 `index.html` 当隐私政策 URL。** 语言选择页既不是条文，也不带生效日期，审核员点开看到的是四个链接——等于让审核多走一步。也别指向 `support.html`：支持页与隐私政策是 ASC 里两个独立字段，混用会被要求补齐。
+
+**英文页是唯一权威版本。** 四条语言页的事实必须一致；出现措辞分歧时以 `en/privacy-policy.html` 为准，其余三种语言照它改。
 
 ## 更新流程
 
