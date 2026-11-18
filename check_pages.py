@@ -21,6 +21,9 @@ LOCALES = ("zh-Hans", "zh-Hant", "en", "ja")
 PAGES = ("privacy-policy.html", "support.html")
 CONTACT_EMAIL = "rankor@sina.com"
 
+# App 名只在这里定义一次：改名（CycleHUD → VeloLume）时不必再翻 8 个 HTML。
+APP_NAME = "VeloLume"
+
 # 「生效日期」四种语言的写法；隐私政策页必须带上，否则无法判断条文何时开始适用。
 EFFECTIVE_LABELS = ("生效日期", "生效日期", "Effective", "施行日")
 
@@ -102,8 +105,8 @@ def check():
                 failures.append(f"{locale}/{page} 找不到生效日期")
 
             # 4. 页面必须自报 App 名，避免复制粘贴留下别的 App 名字
-            if "CycleHUD" not in text:
-                failures.append(f"{locale}/{page} 正文没有出现 CycleHUD")
+            if APP_NAME not in text:
+                failures.append(f"{locale}/{page} 正文没有出现 {APP_NAME}")
 
     index = ROOT / "index.html"
     if not index.exists():

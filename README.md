@@ -1,4 +1,4 @@
-# CycleHUD 法务页（GitHub Pages 源）
+# VeloLume 法务页（GitHub Pages 源）
 
 App Store 要求的两样东西的落地页：**隐私政策 URL** 与**支持 URL**。本目录是一个**独立的 git 仓库**，不属于 App 主仓库（主仓库的 `.gitignore` 已忽略 `legal/`），因为它要单独推到 GitHub 并由 Pages 托管。
 
